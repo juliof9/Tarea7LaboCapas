@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Formulario</title>
+</head>
+<body>
+
+<p>Ingrese los datos del Estudiante:</p><br/>
+        <form th:action="@{/formEstudiante}" th:object="${estudiante}" method="post">
+        	<input type="hidden" th:field="*{c_usuario}">
+        
+			<label>Nombre del Estudiante</label>
+			<input type="text" th:field="*{nombre}" size="40" placeholder="Nombre"><br>
+			<span th:errors ="*{nombre}" style= "color: #E81505;"></span><br>
+						
+			<label>Apellido del Estudiante</label>
+			<input type="text" th:field="*{apellido}" size="40" placeholder="Apellido"><br>
+			<span th:errors ="*{apellido}" style= "color: #E81505;"></span><br>
+						
+			<label>Carnet del Estudiante</label>
+			<input type="text" th:field="*{carne}" size="40" placeholder="Carnet"><br>
+			<span th:errors ="*{carne}" style= "color: #E81505;"></span><br>
+						
+			<label>Carerra del Estudiante</label>
+			<input type="text" th:field="*{carrera}" size="40" placeholder="Carrera"><br>
+			<span th:errors ="*{carrera}" style= "color: #E81505;"></span><br>
+							
+			<input type="submit" value="Agregar"><br><br>
+		</form>
+		
+		<form method="post" th:action="@{/listado}">
+ 			<input type="submit" value="Listado">
+		</form>
+		
+		<form th:action="@{/mostrarEstudiante}" method="post">
+			<label>Ingrese el id del estudiante que desea buscar: </label>
+			<input type="number" size="40" name="codigo"><br>
+			<input type="submit" value="Buscar">
+		</form>
+		<form th:action="@{/borrar}" method="post">
+			<label>Codigo de estudiante a borrar o editar:</label>
+			<input type="number" id="codigo" name="codigo" size="25"><br>
+			<input type="submit" name="action" value="Borrar">
+			<input type="submit" name="action" value="Editar"/>
+		</form>
+		
+</body>
+</html>

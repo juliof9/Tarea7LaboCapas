@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Estudiante</title>
+</head>
+<body>
+
+<label>Estudiante con codigo: </label>
+	<label th:text="${estudiante.c_usuario}"></label>
+	<table>
+		<thead>
+			<th>Nombre</th>
+			<th>Apellido</th>
+			<th>Edad</th>
+			<th>Estado</th>
+		</thead>
+		
+		<tr>
+			<th th:text="${estudiante.nombre}"> </th>
+			<th th:text="${estudiante.apellido}"> </th>
+			<th th:text="${estudiante.carne}"> </th>
+			<th th:text="${estudiante.carrera}"> </th>
+		</tr>
+	</table>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Editar Estudiante</title>
+</head>
+<body>
+
+<p>Ingrese los datos que desea modificar del Estudiante:</p><br/>
+        <form th:action="@{/formEstudiante}" th:object="${estudiante}" method="post">
+        	
+        	<input type="hidden" th:field="*{c_usuario}"><br>
+        
+			<label>Nombre del Estudiante: </label><br>
+			<input type="text" th:field="*{nombre}" size="40"><br>
+						
+			<label>Apellido del Estudiante: </label><br>
+			<input type="text" th:field="*{apellido}" size="40"><br>
+						
+			<label>Carnet del Estudiante: </label><br>
+			<input type="text" th:field="*{carne}" size="40"><br>
+						
+			<label>Carerra del Estudiante: </label><br><br>
+			<input type="text" th:field="*{carrera}" size="40"><br>
+							
+			<input type="submit" value="Confirmar"><br><br>
+		</form>
+		<form th:action="@{/inicio}">
+			<input type="submit" value="Home">
+		</form>
+
+</body>
+</html>
